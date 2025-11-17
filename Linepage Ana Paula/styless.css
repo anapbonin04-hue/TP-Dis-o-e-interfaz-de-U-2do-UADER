@@ -1,0 +1,206 @@
+/* --- configuración global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* scroll */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* ----- FONDO ----- */
+    background-image: url('./img/backgroun.jpg');
+    background-size: cover;          /* toda la pantalla */
+    background-position: center;     /* Centra la imagen */
+    background-attachment: fixed;    /* El fondo no se mueve al hacer scroll */
+    
+    /* ----- Colores y fuentes ----- */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #f0f0f0; /* Color de texto principal */
+    line-height: 1.6;
+}
+
+/* --- Barra de Navegación (Header) --- */
+header {
+    /* Efecto "cristal" semitransparente */
+    background-color: rgba(15, 5, 30, 0.7);
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* La deja fija arriba */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Título a la izq, links a la der */
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto; /* Centra el contenido de la barra */
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Quita el subrayado de los enlaces */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del padre */
+}
+
+nav ul {
+    display: flex;
+    list-style: none; /* Quita los puntos de la lista */
+    gap: 2rem; /* Espacio entre links */
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c59fff; /* Un morado claro para el hover */
+}
+
+/* --- Contenido Principal (Main) --- */
+main {
+    /* Un contenedor para centrar el contenido y que no se pegue a los bordes */
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    /* Tarjetas semitransparentes para el contenido */
+    background-color: rgba(25, 15, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Sección Hero (Bienvenida) --- */
+.hero {
+    text-align: center;
+    /* La primera sección sin fondo para que se vea más abierta */
+    background: none;
+    backdrop-filter: none;
+    border: none;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Sección Proyectos --- */
+#proyectos h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.proyectos-grid {
+    display: grid;
+    /* Crea un grid responsive:
+       - En pantallas grandes: 3 columnas (1fr 1fr 1fr)
+       - En pantallas pequeñas: 1 columna (minmax(300px, 1fr)) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.proyecto-card {
+    background-color: rgba(40, 30, 60, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen respete los bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px); /* Efecto de "levantar" la tarjeta */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.proyecto-card img {
+    width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+    height: auto;
+    display: block;
+}
+
+.proyecto-card h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.proyecto-card h5 {
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/* --- Sección Cierre --- */
+#cierre {
+    text-align: center;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+}
+
+#cierre h2 {
+    font-size: 2rem;
+    color: #f0f0f0;
+}
+
+/* --- Footer (Pie de página) --- */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: rgba(10, 5, 20, 0.8);
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+}
+
+.social-icons a {
+    margin: 0 1rem; /* Espacio entre iconos */
+}
+
+.social-icons img {
+    width: 30px; /* Tamaño de los iconos */
+    height: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 0.7; /* Se atenúa un poco al pasar el mouse */
+}
